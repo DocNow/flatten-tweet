@@ -42,7 +42,7 @@ that looks (in abbreviated form) like this:
         "created_at": "2006-03-21T20:50:14.000Z"
       }
     ]
-  ]
+  }
 }
 ```
 
