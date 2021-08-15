@@ -23,7 +23,7 @@ an API response, and will copy the includes into all the tweets that
 reference them.
 
 So now when you are processing a tweet instead of having to work with a tweet
-that looks like this:
+that looks (in abbreviated form) like this:
 
 ```json
 {
@@ -31,20 +31,16 @@ that looks like this:
     {
       "id": "21",
       "text": "just setting up my twttr",
-      "author_id": "12",
-      ...
-    },
-    ...
+      "author_id": "12"
+    }
   ],
   "includes": {
     "users": [
       {
         "id": "123",
         "username": "jack",
-        "created_at": "2006-03-21T20:50:14.000Z",
-        ...
-      },
-      ...
+        "created_at": "2006-03-21T20:50:14.000Z"
+      }
     ]
   ]
 }
@@ -63,11 +59,8 @@ after flattening you will have:
         "id": "12",
         "username": "jack",
         "created_at": "2006-03-21T20:50:14.000Z",
-        ...
-      },
-      ...
-    },
-    ...
+      }
+    }
   ]
 }
 ```
