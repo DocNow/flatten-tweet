@@ -25,8 +25,8 @@ get a new major version.
 
 ```javascript
 
-import flatten from 'flatten-tweet'
-import Twitter from 'twitter-v2'
+const Twitter = require('twitter-v2')
+const { flatten, EVERYTHING }  = require('flatten-tweet')
 
 const client = new Twitter(credentials)
 const data = await client.get('tweets/search/recent', {
