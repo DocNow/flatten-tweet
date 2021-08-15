@@ -6,18 +6,45 @@
 
 ## Use
 
+flatten-tweet is designed to be used to transform the data received from the
+Twitter v2 API to make it easier to work with. It is not a client itself, so
+you'll need to use something that gives you the raw JSON response (e.g. like
+[twitter-v2]).
+
+The value in having a separate function to flatten data is that other libraries
+and/or projects can import and use it as needed no matter how the data is being
+fetched.
+
+When new expansions or includes are added changed *flatten-tweet* will be
+updated to include them. [semver] will be used to version the NPM package, with
+respect to the flatten-tweet JavaScript API (which is pretty simple) but also
+with respect to the Twitter API. So if a new expansion or field is added you
+can expect a minor version increment. Any backwards incompatible changes will
+get a new major version.
+
+First you'll want to:
+
+    npm i flatten-tweet
+
+and then:
+
 ```javascript
 
 import flatten from 'flatten-tweet'
+import Twitter from 'twitter-v2'
 
-// get some data rom the Twitter v2 API
+const client = new Twitter(credentials)
+const data = await client.get('tweets/search/recent', {query: 'from:jack'})
+
+// flatten it!
 
 const flattened = flatten(data)
 ```
 
 ## Huh?
 
-You might be wondering why you would ever want to use this. Let me explain...
+You might be wondering why you would ever want to use flatten-tweet. Let me
+explain...
 
 Rather than including all the available information for a tweet Twitter's v2
 API now includes [expansions] which allow you to request additional information
@@ -89,3 +116,5 @@ This JavaScript is a port of the [equivalent Python function] in [twarc].
 [expansions]: https://developer.twitter.com/en/docs/twitter-api/expansions
 [twarc]: https://github.com/docnow/twarc
 [equivalent Python function]: https://github.com/DocNow/twarc/blob/main/twarc/expansions.py
+[semver]: https://semver.org
+[twitter-v2]: https://github.com/HunterLarco/twitter-v2
