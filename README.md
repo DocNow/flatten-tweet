@@ -31,9 +31,9 @@ that looks like this:
     {
       "id": "21",
       "text": "just setting up my twttr",
-      "author_id": "12"
+      "author_id": "12",
       ...
-    }
+    },
     ...
   ],
   "includes": {
@@ -41,7 +41,7 @@ that looks like this:
       {
         "id": "123",
         "username": "jack",
-        "created_at": ""2006-03-21T20:50:14.000Z"
+        "created_at": "2006-03-21T20:50:14.000Z",
         ...
       },
       ...
