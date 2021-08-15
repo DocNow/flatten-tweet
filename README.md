@@ -17,6 +17,8 @@ const flattened = flatten(data)
 
 ## Huh?
 
+You might be wondering why you would ever want to use this. Let me explain...
+
 Rather than including all the available information for a tweet Twitter's v2
 API now includes [expansions] which allow you to request additional information
 like user, media, quoted/retweeted tweets, etc. This additional information is
