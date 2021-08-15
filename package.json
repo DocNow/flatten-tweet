@@ -1,0 +1,25 @@
+{
+  "name": "flatten-tweet",
+  "version": "0.0.1",
+  "description": "Make Twitter v2 API data easier to process",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edsu/flatten-tweet.git"
+  },
+  "keywords": [
+    "Twitter"
+  ],
+  "author": "Ed Summers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edsu/flatten-tweet/issues"
+  },
+  "homepage": "https://github.com/edsu/flatten-tweet#readme",
+  "devDependencies": {
+    "mocha": "^9.0.3"
+  }
+}

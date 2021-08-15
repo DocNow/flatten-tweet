@@ -1,14 +1,18 @@
-// a simple demo of importing & using the flatten function
+const { ok } = require("assert")
+const flatten = require("./index.js")
+const response = require("./test-data/response.json")
 
-const flatten = require('./flatten.js')
-const data = require('./response.json')
+describe("flatten", () => {
 
-// output flattened response as JSON (2 space indents)
+  it("tweet has no author", () => {
+    ok(! response.data[0].author, "author missing")
+  })
 
-console.log(
-  JSON.stringify(
-    flatten(data),
-    null,
-    2
-  )
-)
+  it("flattened tweet has an author", () => {
+    const flat = flatten(response)
+    ok(flat.data[0].author.username, "author found")
+  })
+
+  // probably should test more things here!?
+
+})

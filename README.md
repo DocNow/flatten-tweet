@@ -1,4 +1,21 @@
-# flatten
+# flatten-tweet
+
+## Install
+
+    npm install flatten-tweet
+
+## Use
+
+```javascript
+
+import flatten from 'flatten-tweet'
+
+// get some data rom the Twitter v2 API
+
+const flattened = flatten(data)
+```
+
+## Huh?
 
 Rather than including all the available information for a tweet Twitter's v2
 API now includes [expansions] which allow you to request additional information

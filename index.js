@@ -194,7 +194,10 @@ function flatten(response) {
     }
   }
 
-  return tweets
+  return {
+    ...response,
+    data: tweets
+  }
 }
 
 module.exports = flatten
