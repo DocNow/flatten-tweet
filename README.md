@@ -4,7 +4,7 @@ Rather than including all the available information for a tweet Twitter's v2
 API now includes [expansions] which allow you to request additional information
 like user, media, quoted/retweeted tweets, etc. This additional information is
 not included inline in the tweet objects themselves but as an additional JSON
-stanza of *includes*.
+stanza of `includes`.
 
 The `includes` stanza cuts down on potential duplication in the response.
 For example the information about a tweet that is retweeted many times in
@@ -21,6 +21,56 @@ that.
 To simplify this process the `flatten()` function included here will take
 an API response, and will copy the includes into all the tweets that
 reference them.
+
+So now when you are processing a tweet instead of having to work with a tweet
+that looks like this:
+
+```json
+{
+  "data": [
+    {
+      "id": "21",
+      "text": "just setting up my twttr",
+      "author_id": "12"
+      ...
+    }
+    ...
+  ],
+  "includes": {
+    "users": [
+      {
+        "id": "123",
+        "username": "jack",
+        "created_at": ""2006-03-21T20:50:14.000Z"
+        ...
+      },
+      ...
+    ]
+  ]
+}
+```
+
+after flattening you will have:
+
+```json
+{
+  "data": [
+    {
+      "id": "21",
+      "text": "just setting up my twttr",
+      "author_id": "12"
+      "author": {
+        "id": "12",
+        "username": "jack",
+        "created_at": ""2006-03-21T20:50:14.000Z"
+        ...
+      }
+      ...
+    },
+    ...
+  ]
+}
+```
 
 This JavaScript is a port of the [equivalent Python function] in [twarc].
 
