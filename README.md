@@ -62,7 +62,7 @@ after flattening you will have:
       "author": {
         "id": "12",
         "username": "jack",
-        "created_at": ""2006-03-21T20:50:14.000Z",
+        "created_at": "2006-03-21T20:50:14.000Z",
         ...
       },
       ...
