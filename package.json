@@ -1,6 +1,6 @@
 {
   "name": "flatten-tweet",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Make Twitter v2 API data easier to process",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/docnow/flatten-tweet#readme",
   "devDependencies": {
-    "mocha": "^9.0.3"
-  }
+    "mocha": "^9.0.3",
+    "twitter-v2": "^1.1.0"
+  },
+  "dependencies": {}
 }

@@ -13,7 +13,8 @@ you'll need to use something that gives you the raw JSON response (e.g. like
 
 The value in having a separate function to flatten data is that other libraries
 and/or projects can import and use it as needed no matter how the data is being
-fetched.
+fetched. *flatten-tweet* also exports an object `EVERYTHING` which you can use
+to request all expansions and fields, whichever library you might be using.
 
 When new expansions or includes are added changed *flatten-tweet* will be
 updated to include them. [semver] will be used to version the NPM package, with
@@ -28,7 +29,10 @@ import flatten from 'flatten-tweet'
 import Twitter from 'twitter-v2'
 
 const client = new Twitter(credentials)
-const data = await client.get('tweets/search/recent', {query: 'from:jack'})
+const data = await client.get('tweets/search/recent', {
+  ...EVERYTHING
+  query: 'from:jack'
+})
 
 // flatten it!
 
@@ -106,6 +110,13 @@ after flattening you will have:
 ```
 
 This JavaScript is a port of the [equivalent Python function] in [twarc].
+
+## Test
+
+If you want to run the test suite you'll need to install [twitter-v2] and set
+BEARER_TOKEN in your environment first. Then you can:
+
+    npm run test
 
 [expansions]: https://developer.twitter.com/en/docs/twitter-api/expansions
 [twarc]: https://github.com/docnow/twarc

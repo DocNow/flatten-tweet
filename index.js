@@ -200,5 +200,8 @@ function flatten(response) {
   }
 }
 
-module.exports = flatten
+module.exports = {
+  flatten,
+  EVERYTHING
+}
 
