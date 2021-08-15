@@ -22,12 +22,6 @@ with respect to the Twitter API. So if a new expansion or field is added you
 can expect a minor version increment. Any backwards incompatible changes will
 get a new major version.
 
-First you'll want to:
-
-    npm i flatten-tweet
-
-and then:
-
 ```javascript
 
 import flatten from 'flatten-tweet'
