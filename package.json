@@ -1,6 +1,6 @@
 {
   "name": "flatten-tweet",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Make Twitter v2 API data easier to process",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,8 @@
     "mocha": "^9.0.3",
     "twitter-v2": "^1.1.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "bin": {
+    "flatten-tweet": "bin/cli.js"
+  }
 }
